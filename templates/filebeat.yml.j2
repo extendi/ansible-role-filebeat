@@ -20,7 +20,7 @@ output:
     hosts: {{ filebeat_output_elasticsearch_hosts | to_json }}
 
     # Optional protocol and basic auth credentials. These are deprecated.
-    #protocol: "https"
+    protocol: "{{ filebeat_elasticsearch_protocol|default('http') }}"
     #username: "admin"
     #password: "s3cr3t"
 
