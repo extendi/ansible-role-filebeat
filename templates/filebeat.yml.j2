@@ -3,6 +3,12 @@ filebeat:
   prospectors:
     {{ filebeat_prospectors | to_json }}
 
+# Set processors
+{% if filebeat_processors is defined %}
+processors:
+  {{ filebeat_processors | to_json }}
+{% endif %}
+
 # Configure what outputs to use when sending the data collected by the beat.
 # Multiple outputs may be used.
 output:
