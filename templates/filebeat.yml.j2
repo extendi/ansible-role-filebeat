@@ -23,9 +23,7 @@ output:
 
     # Optional index name. The default is "filebeat" and generates
     # [filebeat-]YYYY.MM.DD keys.
-    index: {{ filebeat_output_elasticsearch_index }}
-    setup.template.name: {{ filebeat_output_elasticsearch_template_name }}
-    setup.template.pattern: {{ filebeat_output_elasticsearch_template_pattern }}
+    index: "{{ filebeat_output_elasticsearch_index }}"
 
     # Optional HTTP Path
     #path: "/elasticsearch"
@@ -150,3 +148,6 @@ logging:
     keepfiles: 7
 {% endif %}
 {% endif %}
+
+setup.template.name: "{{ filebeat_output_elasticsearch_template_name }}"
+setup.template.pattern: "{{ filebeat_output_elasticsearch_template_pattern }}"
