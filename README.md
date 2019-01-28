@@ -33,9 +33,14 @@ Prospectors that will be listed in the `prospectors` section of the Filebeat con
 
 Whether to enable Elasticsearch output, and which hosts to send output to.
 
-    filebeat_output_elasticsearch_index: filebeat
+    filebeat_output_elasticsearch_index: "filebeat-%{[beat.version]}-%{+yyyy.MM.dd}"
 
-Index name if Elasticsearch output is enabled. The index name generated will be {{ filebeat_output_elasticsearch_index }}-YYYY.MM.DD
+Index name if Elasticsearch output is enabled.
+
+    filebeat_output_elasticsearch_template_name: "filebeat"
+    filebeat_output_elasticsearch_template_pattern: "filebeat-*"
+
+The template pattern to apply to the default index settings if Elasticsearch output is enabled (see https://www.elastic.co/guide/en/beats/filebeat/current/configuration-template.html for details).
 
     filebeat_output_logstash_enabled: true
     filebeat_output_logstash_hosts:
