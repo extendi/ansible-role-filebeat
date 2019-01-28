@@ -33,6 +33,10 @@ Prospectors that will be listed in the `prospectors` section of the Filebeat con
 
 Whether to enable Elasticsearch output, and which hosts to send output to.
 
+    filebeat_output_elasticsearch_index: filebeat
+
+Index name if Elasticsearch output is enabled. The index name generated will be {{ filebeat_output_elasticsearch_index }}-YYYY.MM.DD
+
     filebeat_output_logstash_enabled: true
     filebeat_output_logstash_hosts:
       - "localhost:5000"
