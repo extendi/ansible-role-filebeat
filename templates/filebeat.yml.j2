@@ -13,6 +13,10 @@ output:
     # Array of hosts to connect to.
     hosts: {{ filebeat_output_elasticsearch_hosts | to_json }}
 
+{% if filebeat_output_elasticsearch_pipeline is defined %}
+    pipeline: {{ filebeat_output_elasticsearch_pipeline }}
+{% endif %}
+
     # Optional protocol and basic auth credentials. These are deprecated.
     #protocol: "https"
     #username: "admin"
