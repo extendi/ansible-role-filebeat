@@ -161,5 +161,6 @@ setup.template.settings:
   index.number_of_replicas: {{ filebeat_output_elasticsearch_template_settings_replicas }}
 
 {% if filebeat_processors is defined %}
-    processors: {{ filebeat_processors }}
+processors:
+  {{ filebeat_processors | to_nice_yaml }}
 {% endif %}
