@@ -152,8 +152,8 @@ logging:
 {% endif %}
 {% endif %}
 
-setup.template.enabled: true
-setup.template.overwrite: true
+setup.template.enabled: "{{ filebeat_output_elasticsearch_template_enabled }}"
+setup.template.overwrite: "{{ filebeat_output_elasticsearch_template_overwrite }}"
 setup.template.name: "{{ filebeat_output_elasticsearch_template_name }}"
 setup.template.pattern: "{{ filebeat_output_elasticsearch_template_pattern }}"
 setup.template.settings:
