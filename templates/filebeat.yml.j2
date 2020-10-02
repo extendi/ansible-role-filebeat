@@ -159,3 +159,7 @@ setup.template.pattern: "{{ filebeat_output_elasticsearch_template_pattern }}"
 setup.template.settings:
   index.number_of_shards: {{ filebeat_output_elasticsearch_template_settings_shards }}
   index.number_of_replicas: {{ filebeat_output_elasticsearch_template_settings_replicas }}
+
+{% if filebeat_processors is defined %}
+    processors: {{ filebeat_processors }}
+{% endif %}

@@ -42,6 +42,10 @@ Index name if Elasticsearch output is enabled.
 
 The template pattern to apply to the default index settings if Elasticsearch output is enabled (see https://www.elastic.co/guide/en/beats/filebeat/current/configuration-template.html for details).
 
+    filebeat_processors: []
+
+Filebeat processors
+
     filebeat_output_logstash_enabled: true
     filebeat_output_logstash_hosts:
       - "localhost:5000"
